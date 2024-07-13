@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class PrototypeTest {
 
     @Test
@@ -17,7 +19,7 @@ public class PrototypeTest {
         System.out.println("prototypeBean1 = " + prototypeBean1);
         System.out.println("prototypeBean2 = " + prototypeBean2);
 
-        Assertions.assertThat(prototypeBean1).isNotSameAs(prototypeBean2);
+        assertThat(prototypeBean1).isNotSameAs(prototypeBean2);
         ac.close();
     }
 
